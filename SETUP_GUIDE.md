@@ -13,6 +13,12 @@ CUSTOM_INSTRUCTIONS.md
 .agent/
 ```
 
+Or use:
+
+```powershell
+.\install-template.ps1 -TargetRepo "C:\path\to\your\project"
+```
+
 ## 2. Replace Placeholders
 
 Search:
@@ -75,7 +81,24 @@ Expected:
 - git status shown;
 - no missing core files.
 
-## 6. First Agent Prompt
+## 6. Expected Target Project Shape
+
+After setup, the target project should look like this:
+
+```text
+your-project/
+  AGENTS.md
+  CUSTOM_INSTRUCTIONS.md
+  GEMINI.md
+  .agent/
+    workflows/
+    skills/
+    templates/
+    LAST_SESSION.md
+    LAST_SESSION_INDEX.md
+```
+
+## 7. First Agent Prompt
 
 Use this after installing:
 
@@ -83,7 +106,7 @@ Use this after installing:
 Lis AGENTS.md, .agent/workflows/before-starting.md et .agent/PROJECT_CONTEXT.md. Dis-moi les placeholders restants et ce que tu dois savoir avant de coder dans ce projet.
 ```
 
-## 7. Suggested Product Packaging
+## 8. Suggested Product Packaging
 
 If selling this as a template, include:
 
@@ -91,4 +114,3 @@ If selling this as a template, include:
 - a short video or PDF showing installation;
 - one customized example project;
 - a disclaimer that users must fill in project-specific production, DB and deploy details.
-

@@ -6,6 +6,52 @@ This is not only for code.
 
 It was built first for software projects, but the method can be used for any long project where an AI agent needs to remember rules, decisions, context, tasks, workflows and previous work.
 
+## Try It In 5 Minutes
+
+Clone this repo or download it as a zip.
+
+```powershell
+git clone https://github.com/JonathanOFTBOX/universal-agent-template.git
+```
+
+Copy these files into the root of your project:
+
+```text
+AGENTS.md
+GEMINI.md
+CUSTOM_INSTRUCTIONS.md
+.agent/
+```
+
+Then open `CUSTOM_INSTRUCTIONS.md` and paste the main block into Codex Custom Instructions.
+
+After that, ask Codex:
+
+```text
+Read AGENTS.md, .agent/workflows/before-starting.md, .agent/PROJECT_CONTEXT.md and .agent/COMMANDS.md. Then audit the remaining placeholders and tell me what project-specific details are missing before we start.
+```
+
+That first audit is important.
+It turns the generic template into rules for your real project.
+
+## What You Should See After Setup
+
+After setup, your project should have:
+
+```text
+your-project/
+  AGENTS.md
+  CUSTOM_INSTRUCTIONS.md
+  .agent/
+    workflows/
+    skills/
+    templates/
+    LAST_SESSION.md
+    LAST_SESSION_INDEX.md
+```
+
+Codex should start new work by reading `AGENTS.md`, checking `.agent/workflows/before-starting.md`, searching the session index, and loading only the skills needed for the task.
+
 ## The Main Idea
 
 Most people use AI agents with prompts only.
@@ -170,22 +216,69 @@ For every meaningful task, the agent should:
 
 ## How To Install
 
-1. Copy the template into your project.
-2. Replace placeholders like:
+### Option A: Manual Copy
+
+1. Download or clone this repository.
+2. Copy these into your target project:
+   - `AGENTS.md`
+   - `GEMINI.md`
+   - `CUSTOM_INSTRUCTIONS.md`
+   - `.agent/`
+3. Replace placeholders like:
    - `[PROJECT_NAME]`
    - `[PROJECT_TYPE]`
    - `[CHECK_COMMAND]`
    - `[BUILD_COMMAND]`
    - `[DEPLOY_TARGET]`
    - `[DATABASE_PROVIDER]`
-3. Open `CUSTOM_INSTRUCTIONS.md`.
-4. Copy the main block into Codex Custom Instructions.
-5. Ask Codex to audit the setup.
+4. Open `CUSTOM_INSTRUCTIONS.md`.
+5. Copy the main block into Codex Custom Instructions.
+6. Ask Codex to audit the setup.
+
+### Option B: PowerShell Install
+
+From this template folder:
+
+```powershell
+.\install-template.ps1 -TargetRepo "C:\path\to\your\project"
+```
+
+Then go to the target project and run:
+
+```powershell
+.agent/scripts/agent-doctor.ps1
+```
+
+The doctor script checks that the required files exist and reports remaining placeholders.
 
 Suggested first prompt:
 
 ```text
 Read AGENTS.md, .agent/workflows/before-starting.md, .agent/PROJECT_CONTEXT.md and .agent/COMMANDS.md. Then audit the remaining placeholders and tell me what project-specific details are missing before we start coding.
+```
+
+## What To Customize
+
+Edit these files first:
+
+- `.agent/PROJECT_CONTEXT.md`: product, users, stack and architecture.
+- `.agent/COMMANDS.md`: install, dev, test, build and deploy commands.
+- `.agent/CRITICAL_FILES.md`: files that are risky or central.
+- `.agent/CODE_PATTERNS.md`: local coding and workflow patterns.
+- `.agent/KNOWN_GOTCHAS.md`: short list of high-risk project facts.
+- `CUSTOM_INSTRUCTIONS.md`: instructions to paste into Codex.
+
+Keep these files short and useful.
+The point is to help the agent find the right context fast.
+
+## Recommended Codex Custom Instruction
+
+Use the full version in `CUSTOM_INSTRUCTIONS.md`.
+
+Short version:
+
+```text
+Read AGENTS.md at the repo root and follow it. Before edits: run git status --short, read .agent/workflows/before-starting.md, read .agent/LAST_SESSION_INDEX.md, search context with rg, then load only relevant .agent skills. Do not modify unrelated files. Do not revert user changes without permission. Verify with real commands. Summarize before commit or push.
 ```
 
 ## Why This Is Useful For Real Engineering
@@ -219,4 +312,3 @@ But this gives the agent a much better operating system than prompts alone.
 ## Tagline
 
 Built for real LLM engineering work, not just prompts.
-
