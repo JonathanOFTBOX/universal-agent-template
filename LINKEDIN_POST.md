@@ -10,6 +10,21 @@ Un vrai systeme de travail avec memoire permanente du projet.
 Au depart, je l'ai fait pour le code.
 Mais la methode peut servir pour beaucoup plus que ca.
 
+Je l'utilise sur une vraie application de production avec plus d'un million de lignes de code et plus de 1,000 fichiers.
+
+Le setup est connecte a des vrais morceaux de production:
+
+- gros frontend;
+- Supabase pour database, auth, storage et realtime;
+- Supabase MCP pour inspecter le schema et les donnees live;
+- Cloudflare pour le deploy et les routes de production;
+- Stripe pour billing et subscriptions;
+- tickets, bugs, checks, deploy, session history;
+- fichiers sensibles ou un mauvais changement peut casser la prod.
+
+Sur un projet comme ca, le vrai probleme n'est pas juste de generer une fonction.
+Le vrai probleme, c'est de faire travailler l'agent correctement dans le projet.
+
 Le vrai probleme, ce n'est pas juste de demander a l'IA d'ecrire du code.
 Le probleme, c'est de garder le contexte, les regles, les decisions, les tickets, les erreurs deja vues et les workflows importants.
 

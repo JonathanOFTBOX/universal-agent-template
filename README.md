@@ -26,6 +26,37 @@ It gives the agent a clear operating system:
 - how to document the work;
 - how to keep context useful instead of noisy.
 
+## Field-Tested On A Real App
+
+I built and use this workflow while working on a large production application with more than 1 million lines of code and more than 1,000 files.
+
+The setup is not just a toy example.
+It is designed for projects where the agent must work across:
+
+- a large frontend codebase;
+- Supabase database, auth, storage and realtime workflows;
+- Supabase MCP for live schema and data inspection;
+- Cloudflare deployment and production routes;
+- Stripe billing and subscription flows;
+- tickets, bugs, deploy checks and session history;
+- multiple sensitive areas where touching the wrong file can break production.
+
+On a project like that, the biggest problem is not whether the agent can write a function.
+The real problem is whether the agent can work with the project correctly.
+
+It needs to know:
+
+- what rules matter;
+- what history matters;
+- what data paths are risky;
+- what production path is real;
+- what commands verify the change;
+- what files should not be touched;
+- what context should be loaded now;
+- what context should stay out of the window.
+
+This template was created to solve that problem.
+
 ## Try It In 5 Minutes
 
 Clone this repo or download it as a zip.
