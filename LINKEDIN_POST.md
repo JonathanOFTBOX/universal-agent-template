@@ -1,6 +1,11 @@
 # LinkedIn Post
 
-J'ai cree un workflow open source pour mieux travailler avec Codex et les agents LLM sur des vrais projets.
+J'ai cree un workflow open source pour rendre Codex plus fiable sur des vrais projets.
+
+Pas juste un prompt.
+Pas juste une liste de bonnes intentions.
+
+Un vrai systeme de travail avec memoire permanente du projet.
 
 Au depart, je l'ai fait pour le code.
 Mais la methode peut servir pour beaucoup plus que ca.
@@ -20,6 +25,8 @@ L'agent peut:
 - perdre l'historique des decisions;
 - faire des commits trop larges;
 - mal gerer les accents, UTF-8, les symboles ou les `$`.
+
+En gros: l'agent peut savoir generer du code, mais ne pas travailler comme quelqu'un qui comprend vraiment le projet.
 
 Mon template ajoute une memoire projet permanente directement dans le repo.
 
@@ -47,6 +54,16 @@ Ce que ca ameliore:
 - une memoire durable du projet;
 - un meilleur workflow pour plusieurs agents ou plusieurs developpeurs.
 
+Ce que ca change concretement:
+
+- l'agent sait ou commencer;
+- il sait quoi lire avant de modifier;
+- il sait quels fichiers sont sensibles;
+- il retrouve les anciennes decisions;
+- il suit les tickets;
+- il documente ce qui compte;
+- il garde les regles dans le projet, pas seulement dans le chat.
+
 Ce n'est pas juste pour le code.
 
 La meme structure peut servir pour:
@@ -68,7 +85,10 @@ Donner a l'agent une memoire permanente du projet, des regles claires et un work
 Ce n'est pas magique.
 Mais c'est beaucoup plus solide que de tout garder dans un prompt ou dans un chat.
 
+Si vous utilisez Codex ou des agents LLM sur des projets concrets, essayez-le.
+Le gain n'est pas juste dans la generation.
+Le gain est dans la continuite, le contexte et la discipline de travail.
+
 Built for real LLM engineering work, not just prompts.
 
-Lien GitHub: [ajoute ton lien ici]
-
+Lien GitHub: https://github.com/JonathanOFTBOX/universal-agent-template

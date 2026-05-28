@@ -6,6 +6,26 @@ This is not only for code.
 
 It was built first for software projects, but the method can be used for any long project where an AI agent needs to remember rules, decisions, context, tasks, workflows and previous work.
 
+## Why You Should Try This
+
+If your AI agent has ever forgotten a rule, edited the wrong file, lost the history of a decision, skipped a check, or made you repeat the same context again, this template is for you.
+
+Prompts are temporary.
+Project memory should be permanent.
+
+This template turns a repo into a working environment that an LLM agent can understand, reload and follow across sessions.
+
+It gives the agent a clear operating system:
+
+- where to start;
+- what rules to follow;
+- what history matters;
+- what files are risky;
+- what checks to run;
+- what not to touch;
+- how to document the work;
+- how to keep context useful instead of noisy.
+
 ## Try It In 5 Minutes
 
 Clone this repo or download it as a zip.
@@ -120,6 +140,17 @@ This workflow helps reduce:
 - broken accents, symbols and dollar signs;
 - agents starting work without reading the right context.
 
+In practical terms, it helps fix the most common failure mode of LLM-assisted work:
+
+The agent can write code, but it does not always work like someone who understands the project.
+
+This template gives it the project map.
+It gives it the rules.
+It gives it the history.
+It gives it the checklist before it changes anything.
+
+That is the difference between "generate some code" and "work inside a real project."
+
 ## Compared To Just Using Prompts
 
 Without this workflow:
@@ -130,6 +161,8 @@ Without this workflow:
 - project-specific behavior must be explained again;
 - the agent may load too much context or the wrong context;
 - commit scope can get messy.
+- mistakes repeat because the lesson was never written into the project;
+- handoffs are weak because the next session cannot see what mattered.
 
 With this workflow:
 
@@ -140,6 +173,8 @@ With this workflow:
 - tickets and decisions stay visible;
 - checks are documented;
 - scope is easier to control.
+- future sessions can resume from real project files, not buried chat history;
+- multiple agents or developers can follow the same operating rules.
 
 ## Not Only For Code
 
